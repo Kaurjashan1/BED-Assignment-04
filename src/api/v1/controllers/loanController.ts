@@ -1,4 +1,5 @@
 import { Request, Response } from 'express';
+import { NotFoundError } from '../../../errors/customErrors';
 
 // Hardcoded data structure for high-risk applications
 const applications = [
@@ -57,9 +58,7 @@ export const getApplicationById = (req: Request, res: Response): void => {
             data: application
         });
     } else {
-        res.status(404).json({
-            message: `Application ID ${id} not found.`
-        });
+        throw new NotFoundError(`Application ID ${id} not found.`);
     }
 };
 

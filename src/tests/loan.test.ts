@@ -1,6 +1,7 @@
 import request from 'supertest';
 import app from '../app';
 
+
 // The ID of a known application from the hardcoded list in loanController
 const TEST_APP_ID = 'LA9001';
 const NON_EXISTENT_ID = 'LA9999';
